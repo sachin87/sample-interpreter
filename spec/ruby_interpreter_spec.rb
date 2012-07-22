@@ -5,11 +5,21 @@ describe Interpreter, "behaviour" do
   before do
     @obj = Interpreter.new
   end
+
+  # public methods  
+  [:hash,:input,:run].each do |method|
+    it {respond_to(method) }
+  end
   
-  it {respond_to(:hash) }
-  it {respond_to(:input) }
-  it {respond_to(:read_input) }
-  it {respond_to(:evaluate_input) }
-  it {respond_to(:run) }
+  
+  # private methods
+  [:read_input, :evaluate_input,
+   :brackets_equal?, :remove_outer_brackets,
+   :add_new_scope, :remove_upper_scope,
+   :display_output, :process_variables,
+   :starting_with_square_bracket,
+   :show_error_message].each do |method|
+    it {respond_to(method) }
+  end
   
 end

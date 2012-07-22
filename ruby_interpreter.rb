@@ -106,6 +106,3 @@ class Interpreter
   end
 
 end
-
-obj = Interpreter.new
-obj.run
